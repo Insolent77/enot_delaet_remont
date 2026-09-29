@@ -1,8 +1,8 @@
 .mission {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(270px, 1fr) minmax(360px, 500px) minmax(270px, 1fr);
   align-items: center;
-  justify-content: space-between;
-  gap: clamp(24px, 2.8vw, 40px);
+  gap: clamp(18px, 2.6vw, 36px);
   min-height: 720px;
   padding-top: 110px;
   padding-bottom: 110px;
@@ -12,19 +12,18 @@
 .mission-copy {
   position: relative;
   z-index: 3;
-  order: 2;
-  flex: 1 1 480px;
+  grid-column: 2;
+  max-width: 500px;
   min-width: 0;
-  max-width: 520px;
+  margin: 0 auto;
   text-align: center;
 }
 
 .compare-card {
   position: relative;
   z-index: 2;
-  flex: 0 1 350px;
-  width: clamp(270px, 26vw, 350px);
-  max-width: 350px;
+  width: 100%;
+  max-width: 360px;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -40,13 +39,20 @@
   box-shadow: 0 22px 52px rgba(0,0,0,.11);
 }
 
-.compare-card-left { order: 1; }
-.compare-card-right { order: 3; }
+.compare-card-left {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.compare-card-right {
+  grid-column: 3;
+  justify-self: end;
+}
 
 .compare-frame {
   position: relative;
   width: 100%;
-  height: 430px;
+  height: 440px;
   overflow: hidden;
   background: #d8d8d3;
   isolation: isolate;
@@ -90,10 +96,22 @@
   font-weight: 800;
   letter-spacing: .02em;
   pointer-events: none;
+  transition: opacity .16s ease, transform .16s ease;
 }
 
-.compare-label-before { left: 14px; }
-.compare-label-after { right: 14px; }
+/* Слева находится раскрываемая версия «После», справа — базовая версия «До». */
+.compare-label-after {
+  left: 14px;
+}
+
+.compare-label-before {
+  right: 14px;
+}
+
+.compare-label.is-hidden {
+  opacity: 0;
+  transform: translateY(-4px);
+}
 
 .compare-line {
   position: absolute;
@@ -149,27 +167,37 @@
 
 .mission .scribble { display: none; }
 
-@media (max-width: 1180px) {
-  .mission { gap: 24px; }
-
-  .mission-copy {
-    flex-basis: 430px;
-    max-width: 470px;
+@media (max-width: 1120px) {
+  .mission {
+    grid-template-columns: minmax(230px, 1fr) minmax(330px, 430px) minmax(230px, 1fr);
+    gap: 18px;
   }
 
-  .compare-card {
-    flex-basis: 290px;
-    width: clamp(250px, 25vw, 290px);
-    max-width: 290px;
-  }
-
-  .compare-frame { height: 360px; }
+  .compare-card { max-width: 300px; }
+  .compare-frame { height: 370px; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 860px) {
   .mission {
+    grid-template-columns: minmax(190px, 1fr) minmax(300px, 360px) minmax(190px, 1fr);
+    gap: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .mission-copy {
+    max-width: 360px;
+  }
+
+  .compare-card { max-width: 230px; }
+  .compare-frame { height: 300px; }
+}
+
+@media (max-width: 720px) {
+  .mission {
+    display: flex;
+    flex-direction: column;
     min-height: auto;
-    flex-wrap: wrap;
     gap: 18px;
     padding-top: 90px;
     padding-bottom: 90px;
@@ -177,41 +205,30 @@
 
   .mission-copy {
     order: 1;
-    flex: 0 0 100%;
+    width: 100%;
     max-width: 650px;
     margin: 0 auto 18px;
   }
 
   .compare-card {
-    width: auto;
-    max-width: none;
-    flex: 1 1 calc(50% - 9px);
+    width: min(100%, 430px);
+    max-width: 430px;
   }
 
   .compare-card-left { order: 2; }
   .compare-card-right { order: 3; }
-  .compare-frame { height: 390px; }
+  .compare-frame { height: 430px; }
 }
 
 @media (max-width: 560px) {
-  .mission { flex-direction: column; }
-
-  .mission-copy {
-    width: 100%;
-    flex-basis: auto;
-  }
-
-  .compare-card {
-    width: 100%;
-    flex-basis: auto;
-  }
-
+  .compare-card { width: 100%; }
   .compare-frame { height: 420px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .compare-card,
-  .compare-card:hover {
+  .compare-card:hover,
+  .compare-label {
     transition: none;
     transform: none;
   }
