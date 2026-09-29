@@ -160,46 +160,6 @@ tabs.forEach((tab, index) => {
   tab.tabIndex = index === 0 ? 0 : -1;
 });
 
-const comparisonPhotos = [
-  {
-    selector: '.compare-card-left',
-    before: 'assets/photos/bath-before.webp',
-    after: 'assets/photos/bath-after.webp',
-    beforeAlt: 'Ванная до покраски плитки',
-    afterAlt: 'Та же ванная после покраски плитки',
-    caption: 'Покраска плитки · до / после'
-  },
-  {
-    selector: '.compare-card-right',
-    before: 'assets/photos/bath-before.webp',
-    after: 'assets/photos/bath-after.webp',
-    beforeAlt: 'Ванная до переделки',
-    afterAlt: 'Та же ванная после переделки',
-    caption: 'Ванная · потяни ползунок'
-  }
-];
-
-comparisonPhotos.forEach((item) => {
-  const card = document.querySelector(item.selector);
-  if (!card) return;
-
-  const beforeImage = card.querySelector('.compare-base');
-  const afterImage = card.querySelector('.compare-overlay img');
-  const captionText = card.querySelector(':scope > p');
-
-  if (beforeImage) {
-    beforeImage.src = item.before;
-    beforeImage.alt = item.beforeAlt;
-  }
-
-  if (afterImage) {
-    afterImage.src = item.after;
-    afterImage.alt = item.afterAlt;
-  }
-
-  if (captionText) captionText.textContent = item.caption;
-});
-
 const comparisons = [...document.querySelectorAll('[data-compare]')];
 comparisons.forEach((comparison) => {
   const range = comparison.querySelector('.compare-range');
