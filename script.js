@@ -28,46 +28,74 @@ const updateHeader = () => {
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
+const PHOTO_ATLAS = 'assets/enot-works.webp';
+const TRANSPARENT_PIXEL = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+const photoPositions = {
+  bathAfter: '0% 0%',
+  bathBefore: '50% 0%',
+  boxAfter: '100% 0%',
+  boxBefore: '0% 100%',
+  cabinet: '50% 100%',
+  towel: '100% 100%'
+};
+
+function applyAtlasPhoto(img, position, alt = '') {
+  if (!img) return;
+  img.src = TRANSPARENT_PIXEL;
+  img.alt = alt;
+  img.style.backgroundImage = `url("${PHOTO_ATLAS}")`;
+  img.style.backgroundSize = '300% auto';
+  img.style.backgroundPosition = position;
+  img.style.backgroundRepeat = 'no-repeat';
+  img.style.backgroundColor = '#deded9';
+}
+
+const heroImage = document.querySelector('.hero-bg');
+if (heroImage) {
+  heroImage.src = 'assets/enot-hero.webp';
+  heroImage.alt = 'Обновлённая ванная из работ Енота';
+}
+
 const serviceData = {
   tile: {
     caption: 'Популярная переделка',
     title: 'Покраска плитки',
     description: 'Способ заметно освежить ванную без демонтажа старой плитки. В блоге — подготовка, материалы и весь процесс по шагам.',
     facts: ['Подготовка поверхности', 'Понятные материалы', 'Можно повторить самому'],
-    image: 'https://images.unsplash.com/photo-1692890659058-03926b16b01c?auto=format&fit=crop&w=1400&q=82',
-    alt: 'Обновлённая плитка в ванной'
+    photo: photoPositions.bathAfter,
+    alt: 'Плитка после покраски в ванной Енота'
   },
   boxes: {
     caption: 'Практичное решение',
     title: 'Съёмные короба',
     description: 'Закрывают трубы и коммуникации, но не перекрывают к ним доступ. Подходит для ванной, туалета и других небольших зон.',
     facts: ['Доступ к трубам сохраняется', 'Можно сделать по месту', 'Аккуратный внешний вид'],
-    image: 'https://images.unsplash.com/photo-1721743169038-7fd6dade7d42?auto=format&fit=crop&w=1400&q=82',
-    alt: 'Небольшая ванная с деревянной отделкой'
+    photo: photoPositions.boxAfter,
+    alt: 'Съёмный короб для труб в ванной Енота'
   },
   walls: {
     caption: 'Быстрое обновление',
     title: 'Покраска стен',
     description: 'Новый цвет и простая фактура могут полностью изменить комнату без сложного ремонта и больших затрат.',
     facts: ['Подбор подходящей краски', 'Подготовка без лишних этапов', 'Идеи для акцентных стен'],
-    image: 'https://images.unsplash.com/photo-1597218868981-1b68e15f0065?auto=format&fit=crop&w=1400&q=82',
-    alt: 'Окрашенная акцентная стена в интерьере'
+    photo: photoPositions.cabinet,
+    alt: 'Светлая стена и переделанная ТВ-тумба из работ Енота'
   },
   baseboards: {
     caption: 'Мелочь, которая меняет вид',
     title: 'Обновление плинтусов',
     description: 'Покраска, подгонка и аккуратное восстановление старых плинтусов без полной замены по всей квартире.',
     facts: ['Без лишнего демонтажа', 'Ровные стыки и края', 'Подбор цвета под интерьер'],
-    image: 'https://images.unsplash.com/photo-1597218868981-1b68e15f0065?auto=format&fit=crop&w=1400&q=82&crop=edges',
-    alt: 'Интерьер с окрашенной стеной и плинтусом'
+    photo: photoPositions.cabinet,
+    alt: 'Готовый интерьер после небольшой переделки Енота'
   },
   decor: {
     caption: 'Для атмосферы',
     title: 'Простой декор',
     description: 'Небольшие DIY-детали, фактурные поверхности и переделки, которые добавляют интерьеру характера без дорогих покупок.',
     facts: ['Простые материалы', 'Можно адаптировать под себя', 'Минимум инструментов'],
-    image: 'https://images.unsplash.com/photo-1763485956350-1b7e230ad578?auto=format&fit=crop&w=1400&q=82',
-    alt: 'Современный интерьер ванной с декоративной отделкой'
+    photo: photoPositions.towel,
+    alt: 'Полотенцесушитель и плитка из работ Енота'
   }
 };
 
@@ -96,9 +124,7 @@ function normalizeServiceImageSize() {
   image.style.maxHeight = `${imageHeight}px`;
   image.style.objectFit = 'cover';
 
-  if (serviceImageWrap) {
-    serviceImageWrap.style.minHeight = '0';
-  }
+  if (serviceImageWrap) serviceImageWrap.style.minHeight = '0';
 }
 
 normalizeServiceImageSize();
@@ -118,19 +144,13 @@ function renderService(key) {
     if (fact1) fact1.textContent = data.facts[0];
     if (fact2) fact2.textContent = data.facts[1];
     if (fact3) fact3.textContent = data.facts[2];
-    if (image) {
-      image.src = data.image;
-      image.alt = data.alt;
-    }
+    applyAtlasPhoto(image, data.photo, data.alt);
     normalizeServiceImageSize();
     panel?.classList.remove('is-switching');
   };
 
-  if (reduceMotion) {
-    updateContent();
-  } else {
-    switchTimer = window.setTimeout(updateContent, 130);
-  }
+  if (reduceMotion) updateContent();
+  else switchTimer = window.setTimeout(updateContent, 130);
 }
 
 function activateTab(tab) {
@@ -145,7 +165,6 @@ function activateTab(tab) {
 
 tabs.forEach((tab, index) => {
   tab.addEventListener('click', () => activateTab(tab));
-
   tab.addEventListener('keydown', (event) => {
     if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
     event.preventDefault();
@@ -159,23 +178,24 @@ tabs.forEach((tab, index) => {
 tabs.forEach((tab, index) => {
   tab.tabIndex = index === 0 ? 0 : -1;
 });
+renderService('tile');
 
 const comparisonPhotos = [
   {
     selector: '.compare-card-left',
-    before: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020130_81b328b9-98d9-4c4b-a708-8baf97e5000f.webp',
-    after: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020838_7f208418-cf40-41a3-9d87-798722559734.webp',
-    beforeAlt: 'Та же ванная до ремонта: старая плитка и деревянная тумба',
-    afterAlt: 'Та же ванная после ремонта: светлая плитка и новая тумба',
-    caption: 'Ванная · реальное до / после'
+    before: photoPositions.bathBefore,
+    after: photoPositions.bathAfter,
+    beforeAlt: 'Ванная Енота до покраски плитки',
+    afterAlt: 'Та же ванная Енота после покраски плитки',
+    caption: 'Покраска плитки · до / после'
   },
   {
     selector: '.compare-card-right',
-    before: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020150_722313ab-edf9-4fbc-bb3c-924a61c71f64.webp',
-    after: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020903_707feb2e-8cef-40f5-bb41-5662b97f22fb.webp',
-    beforeAlt: 'Та же душевая до ремонта: старая плитка и душевая кабина',
-    afterAlt: 'Та же душевая после ремонта: новая плитка и стеклянные перегородки',
-    caption: 'Душевая · реальное до / после'
+    before: photoPositions.boxBefore,
+    after: photoPositions.boxAfter,
+    beforeAlt: 'Трубы рядом с раковиной до установки короба',
+    afterAlt: 'Те же трубы после установки съёмного короба',
+    caption: 'Короб для труб · до / после'
   }
 ];
 
@@ -187,18 +207,24 @@ comparisonPhotos.forEach((item) => {
   const afterImage = card.querySelector('.compare-overlay img');
   const captionText = card.querySelector(':scope > p');
 
-  if (beforeImage) {
-    beforeImage.src = item.before;
-    beforeImage.alt = item.beforeAlt;
-  }
-
-  if (afterImage) {
-    afterImage.src = item.after;
-    afterImage.alt = item.afterAlt;
-  }
-
+  applyAtlasPhoto(beforeImage, item.before, item.beforeAlt);
+  applyAtlasPhoto(afterImage, item.after, item.afterAlt);
   if (captionText) captionText.textContent = item.caption;
 });
+
+const caseImages = document.querySelectorAll('.case-card img');
+applyAtlasPhoto(caseImages[0], photoPositions.bathAfter, 'Покрашенная плитка в ванной Енота');
+applyAtlasPhoto(caseImages[1], photoPositions.boxAfter, 'Съёмный короб для труб Енота');
+applyAtlasPhoto(caseImages[2], photoPositions.cabinet, 'Переделанная ТВ-тумба и стена Енота');
+
+const benefitImages = document.querySelectorAll('.benefit-image-card img');
+applyAtlasPhoto(benefitImages[0], photoPositions.towel, 'Полотенцесушитель из работ Енота');
+applyAtlasPhoto(benefitImages[1], photoPositions.bathAfter, 'Готовая ванная после переделки Енота');
+
+const materialImages = document.querySelectorAll('.material-thumbs img');
+applyAtlasPhoto(materialImages[0], photoPositions.bathAfter, 'Крашеная плитка');
+applyAtlasPhoto(materialImages[1], photoPositions.boxAfter, 'Деревянный короб');
+applyAtlasPhoto(materialImages[2], photoPositions.cabinet, 'Переделанная ТВ-тумба');
 
 const comparisons = [...document.querySelectorAll('[data-compare]')];
 comparisons.forEach((comparison) => {
@@ -211,8 +237,6 @@ comparisons.forEach((comparison) => {
     const value = Math.max(0, Math.min(100, Number(range.value)));
     comparison.style.setProperty('--position', `${value}%`);
 
-    // «После» находится в раскрываемой левой части, «До» — в правой.
-    // Подпись показываем только когда её версия действительно видна.
     afterLabel?.classList.toggle('is-hidden', value < 18);
     beforeLabel?.classList.toggle('is-hidden', value > 82);
 
