@@ -180,12 +180,20 @@ comparisonPhotos.forEach((item) => {
 const comparisons = [...document.querySelectorAll('[data-compare]')];
 comparisons.forEach((comparison) => {
   const range = comparison.querySelector('.compare-range');
+  const beforeLabel = comparison.querySelector('.compare-label-before');
+  const afterLabel = comparison.querySelector('.compare-label-after');
   if (!range) return;
 
   const updateComparison = () => {
     const value = Math.max(0, Math.min(100, Number(range.value)));
     comparison.style.setProperty('--position', `${value}%`);
-    range.setAttribute('aria-valuetext', `${value}% изображения после ремонта`);
+
+    // Слева раскрывается «После», справа остаётся «До».
+    // Подпись скрывается, если соответствующей части почти не видно.
+    afterLabel?.classList.toggle('is-hidden', value < 18);
+    beforeLabel?.classList.toggle('is-hidden', value > 82);
+
+    range.setAttribute('aria-valuetext', `${value}% изображения после ремонта, ${100 - value}% изображения до ремонта`);
   };
 
   range.addEventListener('input', updateComparison);
