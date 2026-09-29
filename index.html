@@ -8,6 +8,7 @@
   <title>Енот делает ремонт</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -30,7 +31,7 @@
 
     <main>
       <section class="hero reveal">
-        <img class="hero-bg" src="assets/bathroom.svg" alt="Переделка ванной своими руками">
+        <img class="hero-bg" src="https://images.unsplash.com/photo-1721743169038-7fd6dade7d42?auto=format&fit=crop&w=1800&q=82" alt="Небольшая ванная после обновления">
         <div class="hero-shade"></div>
 
         <div class="hero-card">
@@ -59,41 +60,41 @@
         <p class="section-lead">Без капитальной стройки и сложных терминов. Простые идеи, понятные материалы и реальные переделки, которые можно повторить дома.</p>
         <a class="black-button" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">Instagram <span>↗</span></a>
 
-        <img class="mission-photo mission-photo-left" src="assets/detail.svg" alt="Деталь интерьера">
-        <img class="mission-photo mission-photo-right" src="assets/box.svg" alt="Съёмный короб для труб">
+        <img class="mission-photo mission-photo-left" src="https://images.unsplash.com/photo-1597218868981-1b68e15f0065?auto=format&fit=crop&w=900&q=80" alt="Окрашенная стена в интерьере" loading="lazy">
+        <img class="mission-photo mission-photo-right" src="https://images.unsplash.com/photo-1692890659058-03926b16b01c?auto=format&fit=crop&w=900&q=80" alt="Ванная с плиткой" loading="lazy">
         <div class="scribble" aria-hidden="true"></div>
       </section>
 
       <section class="services section-space" id="services">
         <div class="center-heading reveal">
-          <span class="section-tag">Что можно сделать</span>
+          <span class="section-tag">Что делаю</span>
           <h2>Небольшие переделки<br>с заметным результатом</h2>
-          <p>То, что не требует полноценного ремонта квартиры.</p>
+          <p>Выбери направление — ниже покажу, что именно можно сделать.</p>
         </div>
 
-        <div class="service-tabs reveal" aria-label="Направления">
-          <span class="active">Плитка</span>
-          <span>Короба</span>
-          <span>Стены</span>
-          <span>Плинтусы</span>
-          <span>Декор</span>
+        <div class="service-tabs reveal" role="tablist" aria-label="Направления ремонта">
+          <button class="active" type="button" role="tab" aria-selected="true" data-service="tile">Плитка</button>
+          <button type="button" role="tab" aria-selected="false" data-service="boxes">Короба</button>
+          <button type="button" role="tab" aria-selected="false" data-service="walls">Стены</button>
+          <button type="button" role="tab" aria-selected="false" data-service="baseboards">Плинтусы</button>
+          <button type="button" role="tab" aria-selected="false" data-service="decor">Декор</button>
         </div>
 
-        <div class="service-panel reveal">
+        <div class="service-panel reveal" id="service-panel" aria-live="polite">
           <div class="service-copy">
-            <span class="small-caption">Популярная переделка</span>
-            <h3>Покраска плитки</h3>
-            <p>Способ заметно освежить ванную без демонтажа старой плитки. В блоге — подготовка, материалы и весь процесс по шагам.</p>
+            <span class="small-caption" id="service-caption">Популярная переделка</span>
+            <h3 id="service-title">Покраска плитки</h3>
+            <p id="service-description">Способ заметно освежить ванную без демонтажа старой плитки. В блоге — подготовка, материалы и весь процесс по шагам.</p>
 
             <div class="service-facts">
-              <div><span>01</span><strong>Подготовка поверхности</strong></div>
-              <div><span>02</span><strong>Понятные материалы</strong></div>
-              <div><span>03</span><strong>Можно повторить самому</strong></div>
+              <div><span>01</span><strong id="service-fact-1">Подготовка поверхности</strong></div>
+              <div><span>02</span><strong id="service-fact-2">Понятные материалы</strong></div>
+              <div><span>03</span><strong id="service-fact-3">Можно повторить самому</strong></div>
             </div>
           </div>
 
           <div class="service-image-wrap">
-            <img src="assets/tile.svg" alt="Покраска плитки">
+            <img id="service-image" src="https://images.unsplash.com/photo-1692890659058-03926b16b01c?auto=format&fit=crop&w=1400&q=82" alt="Покраска и обновление плитки" loading="lazy">
           </div>
         </div>
       </section>
@@ -106,7 +107,7 @@
 
         <div class="cases-grid">
           <article class="case-card reveal">
-            <img src="assets/tile.svg" alt="Крашеная плитка">
+            <img src="https://images.unsplash.com/photo-1692890659058-03926b16b01c?auto=format&fit=crop&w=1100&q=80" alt="Ванная с плиткой" loading="lazy">
             <div class="case-body">
               <span>01</span>
               <h3>Крашеная плитка</h3>
@@ -115,7 +116,7 @@
           </article>
 
           <article class="case-card reveal">
-            <img src="assets/box.svg" alt="Съёмный короб для труб">
+            <img src="https://images.unsplash.com/photo-1721743169038-7fd6dade7d42?auto=format&fit=crop&w=1100&q=80" alt="Небольшая ванная с деревянной отделкой" loading="lazy">
             <div class="case-body">
               <span>02</span>
               <h3>Съёмный короб</h3>
@@ -124,7 +125,7 @@
           </article>
 
           <article class="case-card reveal">
-            <img src="assets/wall.svg" alt="Декоративная стена">
+            <img src="https://images.unsplash.com/photo-1597218868981-1b68e15f0065?auto=format&fit=crop&w=1100&q=80" alt="Окрашенная акцентная стена" loading="lazy">
             <div class="case-body">
               <span>03</span>
               <h3>Стена своими руками</h3>
@@ -149,7 +150,7 @@
           </article>
 
           <article class="benefit-image-card">
-            <img src="assets/bathroom.svg" alt="Ванная после переделки">
+            <img src="https://images.unsplash.com/photo-1763485956350-1b7e230ad578?auto=format&fit=crop&w=1100&q=80" alt="Современная ванная" loading="lazy">
           </article>
 
           <article class="stat-card">
@@ -160,9 +161,9 @@
 
           <article class="materials-card">
             <div class="material-thumbs">
-              <img src="assets/tile.svg" alt="Плитка">
-              <img src="assets/detail.svg" alt="Деталь">
-              <img src="assets/wall.svg" alt="Стена">
+              <img src="https://images.unsplash.com/photo-1692890659058-03926b16b01c?auto=format&fit=crop&w=500&q=76" alt="Плитка" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1721743169038-7fd6dade7d42?auto=format&fit=crop&w=500&q=76" alt="Деревянная отделка" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1597218868981-1b68e15f0065?auto=format&fit=crop&w=500&q=76" alt="Окрашенная стена" loading="lazy">
             </div>
             <h3>Материалы без загадок</h3>
             <p>Показываю, чем пользовался и что получилось.</p>
@@ -175,7 +176,7 @@
           </article>
 
           <article class="benefit-image-card tall">
-            <img src="assets/box.svg" alt="Съёмный короб">
+            <img src="https://images.unsplash.com/photo-1721743169038-7fd6dade7d42?auto=format&fit=crop&w=1100&q=80" alt="Интерьер небольшой ванной" loading="lazy">
           </article>
         </div>
       </section>
