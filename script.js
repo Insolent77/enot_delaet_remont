@@ -34,40 +34,40 @@ const serviceData = {
     title: 'Покраска плитки',
     description: 'Способ заметно освежить ванную без демонтажа старой плитки. В блоге — подготовка, материалы и весь процесс по шагам.',
     facts: ['Подготовка поверхности', 'Понятные материалы', 'Можно повторить самому'],
-    image: 'https://images.unsplash.com/photo-1692890659058-03926b16b01c?auto=format&fit=crop&w=1400&q=82',
-    alt: 'Обновлённая плитка в ванной'
+    image: 'assets/photos/bath-after.webp',
+    alt: 'Обновлённая светлая ванная после покраски плитки'
   },
   boxes: {
     caption: 'Практичное решение',
     title: 'Съёмные короба',
     description: 'Закрывают трубы и коммуникации, но не перекрывают к ним доступ. Подходит для ванной, туалета и других небольших зон.',
     facts: ['Доступ к трубам сохраняется', 'Можно сделать по месту', 'Аккуратный внешний вид'],
-    image: 'https://images.unsplash.com/photo-1721743169038-7fd6dade7d42?auto=format&fit=crop&w=1400&q=82',
-    alt: 'Небольшая ванная с деревянной отделкой'
+    image: 'assets/photos/bath-before-after.webp',
+    alt: 'Ванная до и после переделки с аккуратным коробом'
   },
   walls: {
     caption: 'Быстрое обновление',
     title: 'Покраска стен',
     description: 'Новый цвет и простая фактура могут полностью изменить комнату без сложного ремонта и больших затрат.',
     facts: ['Подбор подходящей краски', 'Подготовка без лишних этапов', 'Идеи для акцентных стен'],
-    image: 'https://images.unsplash.com/photo-1597218868981-1b68e15f0065?auto=format&fit=crop&w=1400&q=82',
-    alt: 'Окрашенная акцентная стена в интерьере'
+    image: 'assets/photos/tv-console.webp',
+    alt: 'Светлая стена и обновлённая ТВ-зона'
   },
   baseboards: {
     caption: 'Мелочь, которая меняет вид',
     title: 'Обновление плинтусов',
     description: 'Покраска, подгонка и аккуратное восстановление старых плинтусов без полной замены по всей квартире.',
     facts: ['Без лишнего демонтажа', 'Ровные стыки и края', 'Подбор цвета под интерьер'],
-    image: 'https://images.unsplash.com/photo-1597218868981-1b68e15f0065?auto=format&fit=crop&w=1400&q=82&crop=edges',
-    alt: 'Интерьер с окрашенной стеной и плинтусом'
+    image: 'assets/photos/cabinet.webp',
+    alt: 'Переделанная тумба на фоне светлой стены и пола'
   },
   decor: {
     caption: 'Для атмосферы',
     title: 'Простой декор',
     description: 'Небольшие DIY-детали, фактурные поверхности и переделки, которые добавляют интерьеру характера без дорогих покупок.',
     facts: ['Простые материалы', 'Можно адаптировать под себя', 'Минимум инструментов'],
-    image: 'https://images.unsplash.com/photo-1763485956350-1b7e230ad578?auto=format&fit=crop&w=1400&q=82',
-    alt: 'Современный интерьер ванной с декоративной отделкой'
+    image: 'assets/photos/towel-warmer.webp',
+    alt: 'Полотенцесушитель на плиточной стене'
   }
 };
 
@@ -163,19 +163,19 @@ tabs.forEach((tab, index) => {
 const comparisonPhotos = [
   {
     selector: '.compare-card-left',
-    before: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020130_81b328b9-98d9-4c4b-a708-8baf97e5000f.webp',
-    after: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020838_7f208418-cf40-41a3-9d87-798722559734.webp',
-    beforeAlt: 'Та же ванная до ремонта: старая плитка и деревянная тумба',
-    afterAlt: 'Та же ванная после ремонта: светлая плитка и новая тумба',
-    caption: 'Ванная · реальное до / после'
+    before: 'assets/photos/bath-before.webp',
+    after: 'assets/photos/bath-after.webp',
+    beforeAlt: 'Ванная до покраски плитки',
+    afterAlt: 'Та же ванная после покраски плитки',
+    caption: 'Покраска плитки · до / после'
   },
   {
     selector: '.compare-card-right',
-    before: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020150_722313ab-edf9-4fbc-bb3c-924a61c71f64.webp',
-    after: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020903_707feb2e-8cef-40f5-bb41-5662b97f22fb.webp',
-    beforeAlt: 'Та же душевая до ремонта: старая плитка и душевая кабина',
-    afterAlt: 'Та же душевая после ремонта: новая плитка и стеклянные перегородки',
-    caption: 'Душевая · реальное до / после'
+    before: 'assets/photos/bath-before.webp',
+    after: 'assets/photos/bath-after.webp',
+    beforeAlt: 'Ванная до переделки',
+    afterAlt: 'Та же ванная после переделки',
+    caption: 'Ванная · потяни ползунок'
   }
 ];
 
@@ -211,8 +211,6 @@ comparisons.forEach((comparison) => {
     const value = Math.max(0, Math.min(100, Number(range.value)));
     comparison.style.setProperty('--position', `${value}%`);
 
-    // «После» находится в раскрываемой левой части, «До» — в правой.
-    // Подпись показываем только когда её версия действительно видна.
     afterLabel?.classList.toggle('is-hidden', value < 18);
     beforeLabel?.classList.toggle('is-hidden', value > 82);
 
