@@ -137,6 +137,46 @@ tabs.forEach((tab, index) => {
   tab.tabIndex = index === 0 ? 0 : -1;
 });
 
+const comparisonPhotos = [
+  {
+    selector: '.compare-card-left',
+    before: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020130_81b328b9-98d9-4c4b-a708-8baf97e5000f.webp',
+    after: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020838_7f208418-cf40-41a3-9d87-798722559734.webp',
+    beforeAlt: 'Та же ванная до ремонта: старая плитка и деревянная тумба',
+    afterAlt: 'Та же ванная после ремонта: светлая плитка и новая тумба',
+    caption: 'Ванная · реальное до / после'
+  },
+  {
+    selector: '.compare-card-right',
+    before: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020150_722313ab-edf9-4fbc-bb3c-924a61c71f64.webp',
+    after: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020903_707feb2e-8cef-40f5-bb41-5662b97f22fb.webp',
+    beforeAlt: 'Та же душевая до ремонта: старая плитка и душевая кабина',
+    afterAlt: 'Та же душевая после ремонта: новая плитка и стеклянные перегородки',
+    caption: 'Душевая · реальное до / после'
+  }
+];
+
+comparisonPhotos.forEach((item) => {
+  const card = document.querySelector(item.selector);
+  if (!card) return;
+
+  const beforeImage = card.querySelector('.compare-base');
+  const afterImage = card.querySelector('.compare-overlay img');
+  const captionText = card.querySelector(':scope > p');
+
+  if (beforeImage) {
+    beforeImage.src = item.before;
+    beforeImage.alt = item.beforeAlt;
+  }
+
+  if (afterImage) {
+    afterImage.src = item.after;
+    afterImage.alt = item.afterAlt;
+  }
+
+  if (captionText) captionText.textContent = item.caption;
+});
+
 const comparisons = [...document.querySelectorAll('[data-compare]')];
 comparisons.forEach((comparison) => {
   const range = comparison.querySelector('.compare-range');
