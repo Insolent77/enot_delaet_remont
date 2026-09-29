@@ -13,6 +13,7 @@
   position: relative;
   z-index: 3;
   grid-column: 2;
+  grid-row: 1;
   max-width: 500px;
   min-width: 0;
   margin: 0 auto;
@@ -22,6 +23,7 @@
 .compare-card {
   position: relative;
   z-index: 2;
+  grid-row: 1;
   width: 100%;
   max-width: 360px;
   margin: 0;
