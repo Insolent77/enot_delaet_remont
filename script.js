@@ -80,7 +80,29 @@ const fact1 = document.getElementById('service-fact-1');
 const fact2 = document.getElementById('service-fact-2');
 const fact3 = document.getElementById('service-fact-3');
 const image = document.getElementById('service-image');
+const serviceImageWrap = document.querySelector('.service-image-wrap');
 let switchTimer;
+
+function normalizeServiceImageSize() {
+  if (!image) return;
+
+  let imageHeight = 426;
+  if (window.innerWidth <= 720) imageHeight = 300;
+  else if (window.innerWidth <= 980) imageHeight = 380;
+
+  image.style.width = '100%';
+  image.style.height = `${imageHeight}px`;
+  image.style.minHeight = `${imageHeight}px`;
+  image.style.maxHeight = `${imageHeight}px`;
+  image.style.objectFit = 'cover';
+
+  if (serviceImageWrap) {
+    serviceImageWrap.style.minHeight = '0';
+  }
+}
+
+normalizeServiceImageSize();
+window.addEventListener('resize', normalizeServiceImageSize, { passive: true });
 
 function renderService(key) {
   const data = serviceData[key];
@@ -100,6 +122,7 @@ function renderService(key) {
       image.src = data.image;
       image.alt = data.alt;
     }
+    normalizeServiceImageSize();
     panel?.classList.remove('is-switching');
   };
 
@@ -188,8 +211,8 @@ comparisons.forEach((comparison) => {
     const value = Math.max(0, Math.min(100, Number(range.value)));
     comparison.style.setProperty('--position', `${value}%`);
 
-    // Слева раскрывается «После», справа остаётся «До».
-    // Подпись скрывается, если соответствующей части почти не видно.
+    // «После» находится в раскрываемой левой части, «До» — в правой.
+    // Подпись показываем только когда её версия действительно видна.
     afterLabel?.classList.toggle('is-hidden', value < 18);
     beforeLabel?.classList.toggle('is-hidden', value > 82);
 
