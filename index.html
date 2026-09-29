@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://images.unsplash.com">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="comparison.css">
 </head>
 <body>
   <div class="page-shell">
@@ -55,13 +56,41 @@
       </section>
 
       <section class="mission section-space" id="about">
-        <span class="section-tag">О блоге</span>
-        <h2>Ремонт проще,<br>чем кажется</h2>
-        <p class="section-lead">Без капитальной стройки и сложных терминов. Простые идеи, понятные материалы и реальные переделки, которые можно повторить дома.</p>
-        <a class="black-button" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">Instagram <span>↗</span></a>
+        <div class="mission-copy reveal">
+          <span class="section-tag">О блоге</span>
+          <h2>Ремонт проще,<br>чем кажется</h2>
+          <p class="section-lead">Без капитальной стройки и сложных терминов. Простые идеи, понятные материалы и реальные переделки, которые можно повторить дома.</p>
+          <a class="black-button" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">Instagram <span>↗</span></a>
+        </div>
 
-        <img class="mission-photo mission-photo-left" src="https://images.unsplash.com/photo-1597218868981-1b68e15f0065?auto=format&fit=crop&w=900&q=80" alt="Окрашенная стена в интерьере" loading="lazy">
-        <img class="mission-photo mission-photo-right" src="https://images.unsplash.com/photo-1692890659058-03926b16b01c?auto=format&fit=crop&w=900&q=80" alt="Ванная с плиткой" loading="lazy">
+        <article class="compare-card compare-card-left reveal" data-compare style="--position: 48%;">
+          <div class="compare-frame">
+            <img class="compare-base" src="https://images.unsplash.com/photo-1692890659058-03926b16b01c?auto=format&fit=crop&w=1000&q=80" alt="Ванная до обновления" loading="lazy">
+            <div class="compare-overlay">
+              <img src="https://images.unsplash.com/photo-1721743169038-7fd6dade7d42?auto=format&fit=crop&w=1000&q=80" alt="Ванная после обновления" loading="lazy">
+            </div>
+            <span class="compare-label compare-label-before">До</span>
+            <span class="compare-label compare-label-after">После</span>
+            <div class="compare-line" aria-hidden="true"><span>↔</span></div>
+            <input class="compare-range" type="range" min="0" max="100" value="48" aria-label="Сравнить ванную до и после">
+          </div>
+          <p>Ванная · потяни ползунок</p>
+        </article>
+
+        <article class="compare-card compare-card-right reveal" data-compare style="--position: 56%;">
+          <div class="compare-frame">
+            <img class="compare-base" src="https://images.unsplash.com/photo-1597218868981-1b68e15f0065?auto=format&fit=crop&w=1000&q=80" alt="Стена до обновления" loading="lazy">
+            <div class="compare-overlay">
+              <img src="https://images.unsplash.com/photo-1763485956350-1b7e230ad578?auto=format&fit=crop&w=1000&q=80" alt="Интерьер после обновления" loading="lazy">
+            </div>
+            <span class="compare-label compare-label-before">До</span>
+            <span class="compare-label compare-label-after">После</span>
+            <div class="compare-line" aria-hidden="true"><span>↔</span></div>
+            <input class="compare-range" type="range" min="0" max="100" value="56" aria-label="Сравнить интерьер до и после">
+          </div>
+          <p>Переделка · до / после</p>
+        </article>
+
         <div class="scribble" aria-hidden="true"></div>
       </section>
 
