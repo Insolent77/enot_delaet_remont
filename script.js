@@ -136,3 +136,19 @@ tabs.forEach((tab, index) => {
 tabs.forEach((tab, index) => {
   tab.tabIndex = index === 0 ? 0 : -1;
 });
+
+const comparisons = [...document.querySelectorAll('[data-compare]')];
+comparisons.forEach((comparison) => {
+  const range = comparison.querySelector('.compare-range');
+  if (!range) return;
+
+  const updateComparison = () => {
+    const value = Math.max(0, Math.min(100, Number(range.value)));
+    comparison.style.setProperty('--position', `${value}%`);
+    range.setAttribute('aria-valuetext', `${value}% изображения после ремонта`);
+  };
+
+  range.addEventListener('input', updateComparison);
+  range.addEventListener('change', updateComparison);
+  updateComparison();
+});
