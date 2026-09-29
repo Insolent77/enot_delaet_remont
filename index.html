@@ -3,148 +3,221 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ece6dc">
-  <meta name="description" content="Енот делает ремонт — понятные идеи, переделки и решения для ремонта своими руками.">
+  <meta name="theme-color" content="#f3f3f0">
+  <meta name="description" content="Енот делает ремонт — мелкие переделки, покраска и простые решения для дома своими руками.">
   <title>Енот делает ремонт</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="На главную">
-      <span class="brand-mark">🦝</span>
-      <span>ЕНОТ ДЕЛАЕТ РЕМОНТ</span>
-    </a>
-    <nav class="desktop-nav" aria-label="Навигация">
-      <a href="#projects">Переделки</a>
-      <a href="#guides">Шпаргалки</a>
-      <a href="#about">О блоге</a>
-    </nav>
-    <a class="button button-small" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">Instagram ↗</a>
-  </header>
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <a class="brand" href="#top">Енот делает ремонт</a>
 
-  <main>
-    <section class="hero section-shell">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Ремонт / перекраски / своими руками</p>
-        <h1>Ремонт без магии.<br><span>Просто показываю, как.</span></h1>
-        <p class="hero-text">Покраска плитки, съёмные короба, стены, плинтусы и маленькие переделки, которые реально повторить дома.</p>
-        <div class="hero-actions">
-          <a class="button" href="#projects">Смотреть переделки</a>
-          <a class="text-link" href="#guides">Найти нужную шпаргалку →</a>
+      <nav class="desktop-nav" aria-label="Навигация">
+        <a href="#about">О блоге</a>
+        <a href="#services">Что делаю</a>
+        <a href="#cases">Переделки</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a class="top-cta" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">
+        Написать <span class="arrow-box">↗</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="hero reveal">
+        <img class="hero-bg" src="assets/bathroom.svg" alt="Переделка ванной своими руками">
+        <div class="hero-shade"></div>
+
+        <div class="hero-card">
+          <p class="mini-label">Ремонт / перекраски / DIY</p>
+          <h1>Мелкий ремонт<br>без лишней сложности</h1>
+          <p>Показываю, как обновить ванную, перекрасить плитку, закрыть трубы и сделать аккуратные переделки своими руками.</p>
+          <a class="black-button" href="#cases">Смотреть переделки <span>→</span></a>
         </div>
-      </div>
 
-      <div class="hero-visual reveal">
-        <div class="hero-photo hero-photo-main">
-          <img src="assets/bathroom.svg" alt="Светлая ванная после переделки">
-          <span class="floating-label">Покраска плитки</span>
-        </div>
-        <div class="hero-photo hero-photo-small">
-          <img src="assets/box.svg" alt="Съёмный короб для труб">
-          <span class="floating-label">Съёмный короб</span>
-        </div>
-        <div class="hero-note">40+ тыс.<br><span>в Instagram</span></div>
-      </div>
-    </section>
-
-    <section class="ticker" aria-label="Темы блога">
-      <div class="ticker-track">
-        <span>ПОКРАСКА ПЛИТКИ</span><i>✦</i><span>СЪЁМНЫЕ КОРОБА</span><i>✦</i><span>СТЕНЫ</span><i>✦</i><span>ПЛИНТУСЫ</span><i>✦</i><span>ВАННАЯ</span><i>✦</i><span>DIY</span><i>✦</i>
-      </div>
-    </section>
-
-    <section class="projects section-shell" id="projects">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Популярные переделки</p>
-        <h2>Не «идеальный ремонт».<br>А решения, которые работают.</h2>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card project-card-wide reveal">
-          <div class="project-image"><img src="assets/tile.svg" alt="Крашеная плитка в ванной"></div>
-          <div class="project-meta">
-            <div><span class="project-number">01</span><h3>Покраска плитки</h3></div>
-            <p>Как обновить ванную без демонтажа плитки и большой стройки.</p>
+        <div class="hero-social">
+          <div class="avatar-stack" aria-hidden="true">
+            <span>🦝</span><span>🛠️</span><span>🏠</span>
           </div>
-        </article>
+          <p><strong>40 тыс.</strong><br>в Instagram</p>
+        </div>
 
-        <article class="project-card reveal">
-          <div class="project-image"><img src="assets/box.svg" alt="Деревянный короб для труб"></div>
-          <div class="project-meta compact">
-            <div><span class="project-number">02</span><h3>Съёмный короб</h3></div>
-            <p>Закрывает трубы, но остаётся доступ к коммуникациям.</p>
+        <a class="hero-mini-card" href="#services">
+          <span>Что можно повторить дома</span>
+          <strong>Смотреть ↓</strong>
+        </a>
+      </section>
+
+      <section class="mission section-space" id="about">
+        <span class="section-tag">О блоге</span>
+        <h2>Ремонт проще,<br>чем кажется</h2>
+        <p class="section-lead">Без капитальной стройки и сложных терминов. Простые идеи, понятные материалы и реальные переделки, которые можно повторить дома.</p>
+        <a class="black-button" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">Instagram <span>↗</span></a>
+
+        <img class="mission-photo mission-photo-left" src="assets/detail.svg" alt="Деталь интерьера">
+        <img class="mission-photo mission-photo-right" src="assets/box.svg" alt="Съёмный короб для труб">
+        <div class="scribble" aria-hidden="true"></div>
+      </section>
+
+      <section class="services section-space" id="services">
+        <div class="center-heading reveal">
+          <span class="section-tag">Что можно сделать</span>
+          <h2>Небольшие переделки<br>с заметным результатом</h2>
+          <p>То, что не требует полноценного ремонта квартиры.</p>
+        </div>
+
+        <div class="service-tabs reveal" aria-label="Направления">
+          <span class="active">Плитка</span>
+          <span>Короба</span>
+          <span>Стены</span>
+          <span>Плинтусы</span>
+          <span>Декор</span>
+        </div>
+
+        <div class="service-panel reveal">
+          <div class="service-copy">
+            <span class="small-caption">Популярная переделка</span>
+            <h3>Покраска плитки</h3>
+            <p>Способ заметно освежить ванную без демонтажа старой плитки. В блоге — подготовка, материалы и весь процесс по шагам.</p>
+
+            <div class="service-facts">
+              <div><span>01</span><strong>Подготовка поверхности</strong></div>
+              <div><span>02</span><strong>Понятные материалы</strong></div>
+              <div><span>03</span><strong>Можно повторить самому</strong></div>
+            </div>
           </div>
-        </article>
 
-        <article class="project-card reveal">
-          <div class="project-image"><img src="assets/wall.svg" alt="Декоративная стена после покраски"></div>
-          <div class="project-meta compact">
-            <div><span class="project-number">03</span><h3>Стена Pinterest</h3></div>
-            <p>Фактура и цвет без сложного декора и дизайнерского бюджета.</p>
+          <div class="service-image-wrap">
+            <img src="assets/tile.svg" alt="Покраска плитки">
           </div>
-        </article>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <section class="guide-section" id="guides">
-      <div class="section-shell guide-layout">
-        <div class="guide-intro reveal">
-          <p class="eyebrow">Шпаргалки</p>
-          <h2>Сразу к делу.</h2>
-          <p>Коротко: что купить, чем подготовить поверхность и в каком порядке делать.</p>
-          <a class="text-link" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">Все инструкции в Instagram →</a>
+      <section class="cases section-space" id="cases">
+        <div class="center-heading reveal">
+          <span class="section-tag">Переделки</span>
+          <h2>Не идеальная картинка.<br>А то, что реально работает.</h2>
         </div>
 
-        <div class="guide-list reveal">
-          <a class="guide-item" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">
-            <span>01</span><strong>Чем покрасить плитку</strong><em>6 шагов</em><b>↗</b>
-          </a>
-          <a class="guide-item" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">
-            <span>02</span><strong>Как сделать съёмный короб</strong><em>без капитального монтажа</em><b>↗</b>
-          </a>
-          <a class="guide-item" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">
-            <span>03</span><strong>Покраска плинтуса</strong><em>подготовка + краска</em><b>↗</b>
-          </a>
-          <a class="guide-item" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">
-            <span>04</span><strong>Фактурная картина</strong><em>своими руками</em><b>↗</b>
-          </a>
+        <div class="cases-grid">
+          <article class="case-card reveal">
+            <img src="assets/tile.svg" alt="Крашеная плитка">
+            <div class="case-body">
+              <span>01</span>
+              <h3>Крашеная плитка</h3>
+              <p>Как обновить ванную без демонтажа.</p>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <img src="assets/box.svg" alt="Съёмный короб для труб">
+            <div class="case-body">
+              <span>02</span>
+              <h3>Съёмный короб</h3>
+              <p>Прячет трубы и оставляет к ним доступ.</p>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <img src="assets/wall.svg" alt="Декоративная стена">
+            <div class="case-body">
+              <span>03</span>
+              <h3>Стена своими руками</h3>
+              <p>Простой способ добавить фактуру и цвет.</p>
+            </div>
+          </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="about section-shell" id="about">
-      <div class="about-photo reveal">
-        <img src="assets/detail.svg" alt="Деталь интерьера после переделки">
-      </div>
-      <div class="about-copy reveal">
-        <p class="eyebrow">О блоге</p>
-        <h2>Показываю ремонт так, чтобы хотелось попробовать самому.</h2>
-        <p>Без сложных терминов и бесконечной теории. Здесь — реальные переделки, материалы, ошибки и способы сделать аккуратно своими руками.</p>
-        <div class="about-points">
-          <div><strong>62+</strong><span>публикации</span></div>
-          <div><strong>40 тыс.</strong><span>подписчиков</span></div>
-          <div><strong>DIY</strong><span>без лишней сложности</span></div>
+      <section class="benefits section-space">
+        <div class="center-heading reveal">
+          <span class="section-tag">Почему здесь просто</span>
+          <h2>Без ремонта<br>на полжизни</h2>
+          <p>Идеи для тех, кто хочет сделать аккуратно, понятно и без лишних расходов.</p>
         </div>
-      </div>
-    </section>
 
-    <section class="cta section-shell reveal">
-      <div>
-        <p class="eyebrow">Есть вопрос по ремонту?</p>
-        <h2>Покажи, что хочешь переделать.</h2>
-      </div>
-      <a class="button button-dark" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">Написать в Instagram ↗</a>
-    </section>
-  </main>
+        <div class="benefit-grid reveal">
+          <article class="stat-card">
+            <strong>40 тыс.</strong>
+            <h3>подписчиков</h3>
+            <p>Следят за переделками и сохраняют идеи.</p>
+          </article>
 
-  <footer class="site-footer section-shell">
-    <a class="brand" href="#top"><span class="brand-mark">🦝</span><span>ЕНОТ ДЕЛАЕТ РЕМОНТ</span></a>
-    <p>Шпаргалки по ремонту своими руками.</p>
-    <a href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">@enot_delaet_remont ↗</a>
-  </footer>
+          <article class="benefit-image-card">
+            <img src="assets/bathroom.svg" alt="Ванная после переделки">
+          </article>
+
+          <article class="stat-card">
+            <strong>60+</strong>
+            <h3>публикаций</h3>
+            <p>Покраска, декор, короба и мелкий ремонт.</p>
+          </article>
+
+          <article class="materials-card">
+            <div class="material-thumbs">
+              <img src="assets/tile.svg" alt="Плитка">
+              <img src="assets/detail.svg" alt="Деталь">
+              <img src="assets/wall.svg" alt="Стена">
+            </div>
+            <h3>Материалы без загадок</h3>
+            <p>Показываю, чем пользовался и что получилось.</p>
+          </article>
+
+          <article class="dark-card">
+            <p>Есть идея для переделки?</p>
+            <h3>Можно обсудить её в Instagram.</h3>
+            <a href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">Написать <span class="arrow-box light">↗</span></a>
+          </article>
+
+          <article class="benefit-image-card tall">
+            <img src="assets/box.svg" alt="Съёмный короб">
+          </article>
+        </div>
+      </section>
+
+      <section class="faq section-space" id="faq">
+        <div class="faq-heading reveal">
+          <span class="section-tag">FAQ</span>
+          <h2>Частые вопросы</h2>
+        </div>
+
+        <div class="faq-list reveal">
+          <details>
+            <summary>Можно ли покрасить старую плитку? <span>+</span></summary>
+            <p>Да, если правильно подготовить поверхность и подобрать подходящие материалы. В блоге показан весь процесс.</p>
+          </details>
+          <details>
+            <summary>Короб для труб можно снять? <span>+</span></summary>
+            <p>Да. Один из вариантов как раз сделан съёмным, чтобы доступ к трубам сохранялся.</p>
+          </details>
+          <details>
+            <summary>Где посмотреть материалы? <span>+</span></summary>
+            <p>В публикациях Instagram — там есть названия материалов, этапы и ответы на частые вопросы.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="final-cta reveal">
+        <div>
+          <span class="section-tag dark-tag">Есть вопрос?</span>
+          <h2>Покажи, что хочешь переделать</h2>
+          <p>Напиши в Instagram — можно начать с фотографии и пары слов о задаче.</p>
+        </div>
+        <a class="white-button" href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">Написать <span>↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#top">Енот делает ремонт</a>
+      <p>Мелкие переделки своими руками.</p>
+      <a href="https://www.instagram.com/enot_delaet_remont/" target="_blank" rel="noreferrer">@enot_delaet_remont ↗</a>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
