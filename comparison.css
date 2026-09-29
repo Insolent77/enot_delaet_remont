@@ -46,7 +46,7 @@
 .compare-frame {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 430px;
   overflow: hidden;
   background: #d8d8d3;
   isolation: isolate;
@@ -150,9 +150,7 @@
 .mission .scribble { display: none; }
 
 @media (max-width: 1180px) {
-  .mission {
-    gap: 24px;
-  }
+  .mission { gap: 24px; }
 
   .mission-copy {
     flex-basis: 430px;
@@ -164,6 +162,8 @@
     width: clamp(250px, 25vw, 290px);
     max-width: 290px;
   }
+
+  .compare-frame { height: 360px; }
 }
 
 @media (max-width: 900px) {
@@ -190,12 +190,11 @@
 
   .compare-card-left { order: 2; }
   .compare-card-right { order: 3; }
+  .compare-frame { height: 390px; }
 }
 
 @media (max-width: 560px) {
-  .mission {
-    flex-direction: column;
-  }
+  .mission { flex-direction: column; }
 
   .mission-copy {
     width: 100%;
@@ -206,6 +205,8 @@
     width: 100%;
     flex-basis: auto;
   }
+
+  .compare-frame { height: 420px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
