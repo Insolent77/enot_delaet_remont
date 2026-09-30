@@ -1,6 +1,6 @@
 .mission {
   display: grid;
-  grid-template-columns: minmax(270px, 1fr) minmax(360px, 500px) minmax(270px, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 500px) minmax(0, 1fr);
   align-items: center;
   gap: clamp(18px, 2.6vw, 36px);
   min-height: 720px;
@@ -25,7 +25,7 @@
   z-index: 2;
   grid-row: 1;
   width: 100%;
-  max-width: 360px;
+  max-width: 560px;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -54,7 +54,8 @@
 .compare-frame {
   position: relative;
   width: 100%;
-  height: 440px;
+  height: auto;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #d8d8d3;
   isolation: isolate;
@@ -182,28 +183,16 @@
 
 @media (max-width: 1120px) {
   .mission {
-    grid-template-columns: minmax(230px, 1fr) minmax(330px, 430px) minmax(230px, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
   }
-
-  .compare-card { max-width: 300px; }
-  .compare-frame { height: 370px; }
-}
-
-@media (max-width: 860px) {
-  .mission {
-    grid-template-columns: minmax(190px, 1fr) minmax(300px, 360px) minmax(190px, 1fr);
-    gap: 12px;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
   .mission-copy {
-    max-width: 360px;
+    grid-column: 1 / -1;
+    max-width: 590px;
   }
-
-  .compare-card { max-width: 230px; }
-  .compare-frame { height: 300px; }
+  .compare-card { grid-row: 2; max-width: 430px; justify-self: center; }
+  .compare-card-left { grid-column: 1; }
+  .compare-card-right { grid-column: 2; }
 }
 
 @media (max-width: 720px) {
@@ -230,12 +219,10 @@
 
   .compare-card-left { order: 2; }
   .compare-card-right { order: 3; }
-  .compare-frame { height: 430px; }
 }
 
 @media (max-width: 560px) {
   .compare-card { width: 100%; }
-  .compare-frame { height: 420px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
