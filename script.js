@@ -38,7 +38,7 @@ const serviceData = {
       "Выбор грунта и краски",
       "Покраска и уход за покрытием"
     ],
-    "image": "assets/photos/bath-after.webp",
+    "image": "assets/photos/bath-after-restored.webp",
     "alt": "Светлая плитка после покраски в ванной"
   },
   "boxes": {
@@ -50,7 +50,7 @@ const serviceData = {
       "Сборка короба по размеру",
       "Доступ к трубам и счётчикам"
     ],
-    "image": "assets/photos/bath-after.webp",
+    "image": "assets/photos/bath-after-restored.webp",
     "alt": "Короб под дерево слева от раковины"
   },
   "furniture": {
@@ -62,7 +62,7 @@ const serviceData = {
       "Столешница под дерево",
       "Отделка боковин"
     ],
-    "image": "assets/photos/tv-console.webp",
+    "image": "assets/photos/tv-console-restored.webp",
     "alt": "Тумба под телевизор с чёрными фасадами и отделкой под дерево"
   },
   "bathroom": {
@@ -74,7 +74,7 @@ const serviceData = {
       "Зеркало с подсветкой",
       "Чёрная душевая стойка"
     ],
-    "image": "assets/photos/bath-after.webp",
+    "image": "assets/photos/bath-after-restored.webp",
     "alt": "Новая тумба, зеркало с подсветкой и душевая стойка в ванной"
   },
   "decor": {
@@ -86,7 +86,7 @@ const serviceData = {
       "Чёрный торшер",
       "Дерево и чёрные фасады"
     ],
-    "image": "assets/photos/tv-console.webp",
+    "image": "assets/photos/tv-console-restored.webp",
     "alt": "Ваза с сухоцветами на тумбе и чёрный торшер рядом"
   }
 };
