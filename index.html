@@ -100,6 +100,7 @@
           <p>Выбери вкладку, чтобы посмотреть работу поближе.</p>
         </div>
 
+        <div class="service-workspace">
         <div class="service-tabs reveal" role="tablist" aria-label="Направления ремонта">
           <button class="active" type="button" role="tab" aria-selected="true" data-service="tile">Плитка</button>
           <button type="button" role="tab" aria-selected="false" data-service="boxes">Короба</button>
@@ -108,7 +109,7 @@
           <button type="button" role="tab" aria-selected="false" data-service="decor">Декор</button>
         </div>
 
-        <div class="service-panel reveal" id="service-panel" aria-live="polite">
+        <div class="service-panel reveal" id="service-panel" role="tabpanel" aria-live="polite">
           <div class="service-copy">
             <span class="small-caption" id="service-caption">Ванная</span>
             <h3 id="service-title">Покраска плитки</h3>
@@ -124,6 +125,7 @@
           <div class="service-image-wrap">
             <img id="service-image" src="assets/photos/bath-after-restored.webp" alt="Светлая плитка после покраски в ванной" loading="lazy">
           </div>
+        </div>
         </div>
       </section>
 

@@ -92,6 +92,11 @@ const serviceData = {
 };
 
 const tabs = [...document.querySelectorAll('.service-tabs [role="tab"]')];
+const tabList = document.querySelector('.service-tabs');
+const verticalTabs = window.matchMedia('(min-width: 981px)');
+const updateTabOrientation = () => tabList?.setAttribute('aria-orientation', verticalTabs.matches ? 'vertical' : 'horizontal');
+updateTabOrientation();
+verticalTabs.addEventListener('change', updateTabOrientation);
 const panel = document.getElementById('service-panel');
 const caption = document.getElementById('service-caption');
 const title = document.getElementById('service-title');
@@ -138,6 +143,7 @@ function activateTab(tab) {
     item.setAttribute('aria-selected', String(isActive));
     item.tabIndex = isActive ? 0 : -1;
   });
+  panel?.setAttribute('aria-labelledby', tab.id);
   renderService(tab.dataset.service);
 }
 
@@ -145,18 +151,23 @@ tabs.forEach((tab, index) => {
   tab.addEventListener('click', () => activateTab(tab));
 
   tab.addEventListener('keydown', (event) => {
-    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    const previous = verticalTabs.matches ? 'ArrowUp' : 'ArrowLeft';
+    const next = verticalTabs.matches ? 'ArrowDown' : 'ArrowRight';
+    if (![previous, next, 'Home', 'End'].includes(event.key)) return;
     event.preventDefault();
-    const direction = event.key === 'ArrowRight' ? 1 : -1;
-    const nextIndex = (index + direction + tabs.length) % tabs.length;
+    const direction = event.key === next ? 1 : -1;
+    const nextIndex = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + direction + tabs.length) % tabs.length;
     tabs[nextIndex].focus();
     activateTab(tabs[nextIndex]);
   });
 });
 
 tabs.forEach((tab, index) => {
+  tab.id = `service-tab-${tab.dataset.service}`;
+  tab.setAttribute('aria-controls', 'service-panel');
   tab.tabIndex = index === 0 ? 0 : -1;
 });
+if (tabs[0]) panel?.setAttribute('aria-labelledby', tabs[0].id);
 
 const comparisons = [...document.querySelectorAll('[data-compare]')];
 comparisons.forEach((comparison) => {
