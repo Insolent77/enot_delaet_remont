@@ -72,6 +72,12 @@
 
 .compare-base { z-index: 1; }
 
+/* Show the left (before) half of the supplied side-by-side photo. */
+.compare-frame .collage-before {
+  width: 200%;
+  max-width: none;
+}
+
 .compare-overlay {
   position: absolute;
   inset: 0;
@@ -156,6 +162,11 @@
   opacity: 0;
   cursor: ew-resize;
   touch-action: pan-y;
+}
+
+.compare-frame:focus-within {
+  outline: 3px solid #111;
+  outline-offset: -3px;
 }
 
 .compare-card > p {

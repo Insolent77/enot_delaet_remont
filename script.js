@@ -29,45 +29,65 @@ updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
 const serviceData = {
-  tile: {
-    caption: 'Популярная переделка',
-    title: 'Покраска плитки',
-    description: 'Способ заметно освежить ванную без демонтажа старой плитки. В блоге — подготовка, материалы и весь процесс по шагам.',
-    facts: ['Подготовка поверхности', 'Понятные материалы', 'Можно повторить самому'],
-    image: 'https://images.unsplash.com/photo-1692890659058-03926b16b01c?auto=format&fit=crop&w=1400&q=82',
-    alt: 'Обновлённая плитка в ванной'
+  "tile": {
+    "caption": "Ванная",
+    "title": "Покраска плитки",
+    "description": "Бежевую плитку перекрасили в светлый цвет, оставив её на месте. В блоге рассказываю, как подготовить поверхность и чем красить.",
+    "facts": [
+      "Очистка и подготовка плитки",
+      "Выбор грунта и краски",
+      "Покраска и уход за покрытием"
+    ],
+    "image": "assets/photos/bath-after.webp",
+    "alt": "Светлая плитка после покраски в ванной"
   },
-  boxes: {
-    caption: 'Практичное решение',
-    title: 'Съёмные короба',
-    description: 'Закрывают трубы и коммуникации, но не перекрывают к ним доступ. Подходит для ванной, туалета и других небольших зон.',
-    facts: ['Доступ к трубам сохраняется', 'Можно сделать по месту', 'Аккуратный внешний вид'],
-    image: 'https://images.unsplash.com/photo-1721743169038-7fd6dade7d42?auto=format&fit=crop&w=1400&q=82',
-    alt: 'Небольшая ванная с деревянной отделкой'
+  "boxes": {
+    "caption": "Трубы в ванной",
+    "title": "Съёмный короб",
+    "description": "Трубы рядом с раковиной закрыли коробом с отделкой под дерево. Он снимается, когда нужен доступ к соединениям и счётчикам.",
+    "facts": [
+      "Замеры у раковины",
+      "Сборка короба по размеру",
+      "Доступ к трубам и счётчикам"
+    ],
+    "image": "assets/photos/bath-after.webp",
+    "alt": "Короб под дерево слева от раковины"
   },
-  walls: {
-    caption: 'Быстрое обновление',
-    title: 'Покраска стен',
-    description: 'Новый цвет и простая фактура могут полностью изменить комнату без сложного ремонта и больших затрат.',
-    facts: ['Подбор подходящей краски', 'Подготовка без лишних этапов', 'Идеи для акцентных стен'],
-    image: 'https://images.unsplash.com/photo-1597218868981-1b68e15f0065?auto=format&fit=crop&w=1400&q=82',
-    alt: 'Окрашенная акцентная стена в интерьере'
+  "furniture": {
+    "caption": "Гостиная",
+    "title": "Переделка тумбы",
+    "description": "У тумбы оставили чёрные фасады, а столешницу и боковины оформили под дерево. На фото — результат в комнате.",
+    "facts": [
+      "Чёрные фасады",
+      "Столешница под дерево",
+      "Отделка боковин"
+    ],
+    "image": "assets/photos/tv-console.webp",
+    "alt": "Тумба под телевизор с чёрными фасадами и отделкой под дерево"
   },
-  baseboards: {
-    caption: 'Мелочь, которая меняет вид',
-    title: 'Обновление плинтусов',
-    description: 'Покраска, подгонка и аккуратное восстановление старых плинтусов без полной замены по всей квартире.',
-    facts: ['Без лишнего демонтажа', 'Ровные стыки и края', 'Подбор цвета под интерьер'],
-    image: 'https://images.unsplash.com/photo-1597218868981-1b68e15f0065?auto=format&fit=crop&w=1400&q=82&crop=edges',
-    alt: 'Интерьер с окрашенной стеной и плинтусом'
+  "bathroom": {
+    "caption": "Детали переделки",
+    "title": "Обновление ванной",
+    "description": "Кроме плитки, в ванной поменялись тумба, зеркало и душевая стойка. На фото можно рассмотреть, как они сочетаются между собой.",
+    "facts": [
+      "Тумба с раковиной",
+      "Зеркало с подсветкой",
+      "Чёрная душевая стойка"
+    ],
+    "image": "assets/photos/bath-after.webp",
+    "alt": "Новая тумба, зеркало с подсветкой и душевая стойка в ванной"
   },
-  decor: {
-    caption: 'Для атмосферы',
-    title: 'Простой декор',
-    description: 'Небольшие DIY-детали, фактурные поверхности и переделки, которые добавляют интерьеру характера без дорогих покупок.',
-    facts: ['Простые материалы', 'Можно адаптировать под себя', 'Минимум инструментов'],
-    image: 'https://images.unsplash.com/photo-1763485956350-1b7e230ad578?auto=format&fit=crop&w=1400&q=82',
-    alt: 'Современный интерьер ванной с декоративной отделкой'
+  "decor": {
+    "caption": "Гостиная",
+    "title": "Детали в комнате",
+    "description": "Ваза с сухоцветами, чёрный торшер и тумба с отделкой под дерево. Несколько деталей, которые я собрал вместе в этой комнате.",
+    "facts": [
+      "Ваза с сухоцветами",
+      "Чёрный торшер",
+      "Дерево и чёрные фасады"
+    ],
+    "image": "assets/photos/tv-console.webp",
+    "alt": "Ваза с сухоцветами на тумбе и чёрный торшер рядом"
   }
 };
 
@@ -94,7 +114,7 @@ function normalizeServiceImageSize() {
   image.style.height = `${imageHeight}px`;
   image.style.minHeight = `${imageHeight}px`;
   image.style.maxHeight = `${imageHeight}px`;
-  image.style.objectFit = 'cover';
+  image.style.objectFit = 'contain';
 
   if (serviceImageWrap) {
     serviceImageWrap.style.minHeight = '0';
@@ -158,46 +178,6 @@ tabs.forEach((tab, index) => {
 
 tabs.forEach((tab, index) => {
   tab.tabIndex = index === 0 ? 0 : -1;
-});
-
-const comparisonPhotos = [
-  {
-    selector: '.compare-card-left',
-    before: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020130_81b328b9-98d9-4c4b-a708-8baf97e5000f.webp',
-    after: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020838_7f208418-cf40-41a3-9d87-798722559734.webp',
-    beforeAlt: 'Та же ванная до ремонта: старая плитка и деревянная тумба',
-    afterAlt: 'Та же ванная после ремонта: светлая плитка и новая тумба',
-    caption: 'Ванная · реальное до / после'
-  },
-  {
-    selector: '.compare-card-right',
-    before: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020150_722313ab-edf9-4fbc-bb3c-924a61c71f64.webp',
-    after: 'https://www.bathroomremodelingplanotx.com/wp-content/uploads/2026/08/hf_20260802_020903_707feb2e-8cef-40f5-bb41-5662b97f22fb.webp',
-    beforeAlt: 'Та же душевая до ремонта: старая плитка и душевая кабина',
-    afterAlt: 'Та же душевая после ремонта: новая плитка и стеклянные перегородки',
-    caption: 'Душевая · реальное до / после'
-  }
-];
-
-comparisonPhotos.forEach((item) => {
-  const card = document.querySelector(item.selector);
-  if (!card) return;
-
-  const beforeImage = card.querySelector('.compare-base');
-  const afterImage = card.querySelector('.compare-overlay img');
-  const captionText = card.querySelector(':scope > p');
-
-  if (beforeImage) {
-    beforeImage.src = item.before;
-    beforeImage.alt = item.beforeAlt;
-  }
-
-  if (afterImage) {
-    afterImage.src = item.after;
-    afterImage.alt = item.afterAlt;
-  }
-
-  if (captionText) captionText.textContent = item.caption;
 });
 
 const comparisons = [...document.querySelectorAll('[data-compare]')];
